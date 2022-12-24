@@ -58,6 +58,54 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Use multiple database
+
+To use a multiple database follow this steps
+```ts
+import { Injectable } from '@nestjs/common';
+import { DataSource } from 'typeorm';
+
+@Injectable()
+export class NameService {
+  // inject datasource, remember datasurce is a global instance
+  constructor(
+    private readonly dataSource: DataSource,
+  )
+  
+  // get resources wit .query()
+  async getDataWithQueryRaw() {
+    const email = 'jonh@doe.com';
+
+    const result = await this.dataSource.query(
+      `
+        SELECT * FROM name_database1.users
+          WHERE email=?
+        AND isActive = 1;
+      `,
+      [email],
+    );
+    
+    return result;
+  }
+
+  // get resources with .createQueryBuilder instance
+  async getDataWithQueryBuilder() {
+    const query = this.dataSource.createQueryBuilder();
+
+    const comments = await query
+      .select('id', 'body', 'likes')
+      .from('name_database2.comments', 'comments')
+      .where('comments.likes >= :likes', { likes: '100' })
+      .getRawMany();
+
+    return comments;
+  }
+}
+```
+
+> remember that the database must first be configured at `app.module.ts` 
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
