@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import { UploadModule } from './upload/upload.module';
 import { DatabaseModule } from './database/database.module';
 import { CoffeesModule } from './coffees/coffees.module';
+import { IamModule } from './iam/iam.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { CoffeesModule } from './coffees/coffees.module';
     UploadModule,
     DatabaseModule,
     CoffeesModule,
+    IamModule,
   ],
   controllers: [],
   providers: [],
