@@ -1,15 +1,15 @@
-export interface PubsubServiceOptions {
+export interface ServiceOptions {
   region: string;
   apiVersion: string;
-  credentials?: CredentialsPubsubServiceOptions;
+  credentials?: CredentialsServiceOptions;
 }
 
-export interface CredentialsPubsubServiceOptions {
+export interface CredentialsServiceOptions {
   accessKeyId: string;
   secretAccessKey: string;
 }
 
-export const defaultPubsubServiceOptions: PubsubServiceOptions = {
+export const defaultServiceOptions: ServiceOptions = {
   region: 'us-east-1',
   apiVersion: '2012-11-05',
 };
@@ -38,4 +38,10 @@ export interface ParamsSendMessage {
 export interface ParamsDeleteMessage {
   QueueUrl: string;
   ReceiptHandle: string;
+}
+
+export interface ParamsUploadFile {
+  Bucket: string;
+  Key: string;
+  Body: Buffer;
 }

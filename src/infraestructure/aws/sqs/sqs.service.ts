@@ -1,11 +1,11 @@
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import {
   defaultParamsReceiveMessage,
-  defaultPubsubServiceOptions,
+  defaultServiceOptions,
   ParamsDeleteMessage,
   ParamsReceiveMessage,
   ParamsSendMessage,
-  PubsubServiceOptions,
+  ServiceOptions,
 } from '../interfaces/options';
 import {
   SQSClient,
@@ -21,10 +21,10 @@ export class SqsService {
   private readonly sqsClient;
 
   constructor(
-    @Inject('CONFIGURATION_OPTIONS')
-    private readonly options: PubsubServiceOptions,
+    @Inject('SQS_CONFIGURATION_OPTIONS')
+    private readonly options: ServiceOptions,
   ) {
-    this.options = { ...defaultPubsubServiceOptions, ...options };
+    this.options = { ...defaultServiceOptions, ...options };
     this.sqsClient = new SQSClient(this.options);
   }
 

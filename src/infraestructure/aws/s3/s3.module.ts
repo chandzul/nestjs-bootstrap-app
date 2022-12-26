@@ -1,17 +1,17 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { ServiceOptions } from '../interfaces/options';
-import { SqsService } from './sqs.service';
+import { S3Service } from './s3.service';
 
 @Module({})
-export class SqsModule {
+export class S3Module {
   static forRoot(options: Partial<ServiceOptions>): DynamicModule {
     return {
-      module: SqsModule,
+      module: S3Module,
       providers: [
-        { provide: 'SQS_CONFIGURATION_OPTIONS', useValue: options },
-        SqsService,
+        { provide: 'S3_CONFIGURATION_OPTIONS', useValue: options },
+        S3Service,
       ],
-      exports: [SqsService],
+      exports: [S3Service],
     };
   }
 }
