@@ -8,10 +8,4 @@ export class User extends BaseEntity {
 
   @Column({ nullable: false })
   password: string;
-
-  @Column({ nullable: false })
-  status: number;
-
-  @Column({ nullable: false })
-  roleId: number;
 }

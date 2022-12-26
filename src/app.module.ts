@@ -4,6 +4,7 @@ import { NotificationsModule } from './infraestructure/notifications/notificatio
 import { UsersModule } from './users/users.module';
 import { UploadModule } from './upload/upload.module';
 import { DatabaseModule } from './database/database.module';
+import { CoffeesModule } from './coffees/coffees.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { DatabaseModule } from './database/database.module';
     NotificationsModule,
     UploadModule,
     DatabaseModule,
+    CoffeesModule,
   ],
   controllers: [],
   providers: [],
