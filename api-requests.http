@@ -1,0 +1,9 @@
+// Get all coffees
+GET http://localhost:3000/api/coffees
+Content-Type: application/json
+Authorization: bearer ey...
+
+###
+// Save a new coffee
+POST http://localhost:3000/api/coffees
+

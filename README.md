@@ -152,15 +152,21 @@ To use in controller call with:
   async uploadFile() {}
 ```
 
+## Resources
+
+- [A Nest JS Pipeline Cheatsheet](https://www.darraghoriordan.com/2021/11/03/nest-cheatsheet-interceptor-middleware-guard/)
+- [difference-between-interceptor-vs-middleware-vs-filter-in-nest-js](https://stackoverflow.com/questions/54863655/whats-the-difference-between-interceptor-vs-middleware-vs-filter-in-nest-js)
+- [image](https://i.stack.imgur.com/2lFhd.jpg)
+- [Injecting request object to a custom validation class in NestJS](https://dev.to/avantar/injecting-request-object-to-a-custom-validation-class-in-nestjs-5dal)
+- [Creación de un Custom Pipe para validar contra un servicio en NestJS](https://dev.to/raguilera82/creacion-de-un-custom-pipe-para-validar-contra-un-servicio-4bdi)
+
 ## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+...
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [@chandzul](https://chandzul.com)
 
 ## License
 
