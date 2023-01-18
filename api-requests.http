@@ -1,9 +1,38 @@
-// Get all coffees
+### Authentication sing-up
+POST http://localhost:3000/api/authentication/sign-up
+Content-Type: application/json
+
+{
+  "email": "user2@nestjs.com",
+  "password": "{{password}}"
+}
+
+### Authentication sing-in
+POST http://localhost:3000/api/authentication/sign-in
+Content-Type: application/json
+
+{
+  "email": "{{email}}",
+  "password": "{{password}}"
+}
+
+> {% client.global.set("access_token", response.body.accessToken);
+client.global.set("refresh_token", response.body.refreshToken); %}
+
+### Authentication refresh-tokens
+POST http://localhost:3000/api/authentication/refresh-tokens
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refresh_token}}"
+}
+
+### Save a new coffee
+POST http://localhost:3000/api/coffees
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+### Get all coffees
 GET http://localhost:3000/api/coffees
 Content-Type: application/json
-Authorization: bearer ey...
-
-###
-// Save a new coffee
-POST http://localhost:3000/api/coffees
-
+Authorization: Bearer {{access_token}}

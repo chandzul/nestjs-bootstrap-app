@@ -27,6 +27,7 @@ import { AuthenticationGuard } from './authentication/guards/authentication.guar
     //   provide: APP_GUARD,
     //   useClass: AccessTokenGuard,
     // },
+    // Define app_guard to all endpoint in application
     {
       provide: APP_GUARD,
       useClass: AuthenticationGuard,
