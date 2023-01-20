@@ -30,6 +30,15 @@ services:
     networks:
       - my-awesome-app
 
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
+    networks:
+      - my-awesome-app
+
 networks:
   my-awesome-app:
     driver: bridge
@@ -37,3 +46,5 @@ networks:
 volumes:
   postgres:
   pgadmin:
+  redid:
+    driver: local
