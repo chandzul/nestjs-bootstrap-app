@@ -159,6 +159,7 @@ To use in controller call with:
 - [image](https://i.stack.imgur.com/2lFhd.jpg)
 - [Injecting request object to a custom validation class in NestJS](https://dev.to/avantar/injecting-request-object-to-a-custom-validation-class-in-nestjs-5dal)
 - [Creación de un Custom Pipe para validar contra un servicio en NestJS](https://dev.to/raguilera82/creacion-de-un-custom-pipe-para-validar-contra-un-servicio-4bdi)
+- [Circular Dependencies in NestJS and how to Avoid Them](https://trilon.io/blog/avoiding-circular-dependencies-in-nestjs)
 
 ## Support
 
