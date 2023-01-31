@@ -1,6 +1,10 @@
 import { BaseEntity } from 'src/config/base.entity';
 import { Entity, Column } from 'typeorm';
 import { Role } from '../enums/role.enum';
+import {
+  Permission,
+  PermissionType,
+} from '../../iam/authorization/permission.type';
 
 @Entity({ name: 'users' })
 export class User extends BaseEntity {
@@ -12,4 +16,10 @@ export class User extends BaseEntity {
 
   @Column({ enum: Role, default: Role.Regular })
   role: Role;
+
+  // NOTE: Having the "permissions" column in combination with the "role"
+  // likely does not make sense. We use both in this course just to showcase
+  // two different approaches to authorization.
+  @Column({ enum: Permission, default: [], type: 'json' })
+  permissions: PermissionType[];
 }

@@ -1,4 +1,4 @@
-### Authentication sing-up
+### Authentication sing-up (create account)
 POST http://localhost:3000/api/authentication/sign-up
 Content-Type: application/json
 
@@ -7,7 +7,7 @@ Content-Type: application/json
   "password": "{{password}}"
 }
 
-### Authentication sing-in
+### Authentication sing-in (login)
 POST http://localhost:3000/api/authentication/sign-in
 Content-Type: application/json
 
