@@ -6,6 +6,7 @@ import { UploadModule } from './upload/upload.module';
 import { DatabaseModule } from './database/database.module';
 import { CoffeesModule } from './coffees/coffees.module';
 import { IamModule } from './iam/iam.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { IamModule } from './iam/iam.module';
     DatabaseModule,
     CoffeesModule,
     IamModule,
+    CommonModule,
   ],
   controllers: [],
   providers: [],
