@@ -12,10 +12,10 @@ import { CommonModule } from './common/common.module';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     UsersModule,
+    CoffeesModule,
     NotificationsModule,
     UploadModule,
     DatabaseModule,
-    CoffeesModule,
     IamModule,
     CommonModule,
   ],

@@ -36,3 +36,8 @@ Authorization: Bearer {{access_token}}
 GET http://localhost:3000/api/coffees
 Content-Type: application/json
 Authorization: Bearer {{access_token}}
+
+### Get one coffees
+GET http://localhost:3000/api/coffees/1
+Content-Type: application/json
+Authorization: Bearer {{access_token}}

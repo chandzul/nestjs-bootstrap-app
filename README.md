@@ -172,3 +172,10 @@ To use in controller call with:
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+Application api backend with Nestjs in which you want to manage the databases of customers as tenants, this means that for each customer that is configured to create your database.
+
+To detect the tenant is considered to be handled by url as for example: `https://myawesmeapp.com/api/v1/name-client/resource ` where `name-client` is the name of the tenant at database level.
+
+this implementation using dataSource typeOrm v0.3.*

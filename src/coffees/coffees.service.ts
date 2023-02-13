@@ -1,19 +1,36 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Coffee } from './entities/coffee.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class CoffeesService {
+  constructor(
+    @InjectRepository(Coffee)
+    private readonly coffeeRepository: Repository<Coffee>,
+  ) {}
+
   create(createCoffeeDto: CreateCoffeeDto) {
     return 'This action adds a new coffee';
   }
 
-  findAll() {
-    return `This action returns all coffees`;
+  async findAll() {
+    try {
+      return await this.coffeeRepository.find();
+    } catch (e) {
+      throw new NotFoundException(`Coffees not exist`);
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} coffee`;
+  async findOne(id: number) {
+    const coffee = await this.coffeeRepository.findOne({ where: { id } });
+    if (!coffee) {
+      throw new NotFoundException(`Coffee #${id} not found`);
+    }
+
+    return coffee;
   }
 
   update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
